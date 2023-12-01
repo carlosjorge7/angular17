@@ -1,0 +1,13 @@
+<nav>Home</nav>
+
+<!-- @defer (on timer(5000)) {
+<app-mapa></app-mapa>
+} -->
+
+<button #boton>Ver mapa</button>
+
+@defer (on interaction(boton)) {
+<app-mapa></app-mapa>
+}@placeholder {
+<p>Aqui saldra el mapa</p>
+}

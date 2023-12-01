@@ -1,0 +1,18 @@
+<div>
+  @for (personaje of personajes(); track personaje.id) {
+  <div>
+    <h3>{{ personaje.name }}</h3>
+    <p>{{ personaje.species }}</p>
+
+    @if (personaje.status === 'Alive') {
+    <p>Esta vivo</p>
+    }@else if ((personaje.status === 'Dead')) {
+    <p>Esta muerto</p>
+    }@else {
+    <p>No se sabe</p>
+    }
+  </div>
+  }@empty {
+  <p>No hay personajes</p>
+  }
+</div>
