@@ -6,11 +6,12 @@ import {
   signal,
 } from '@angular/core';
 import { PersonajesService } from '../services/personajes.service';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-lista-personajes',
   standalone: true,
-  imports: [],
+  imports: [ButtonModule],
   templateUrl: './lista-personajes.component.html',
   styleUrl: './lista-personajes.component.css',
 })
@@ -20,6 +21,7 @@ export class ListaPersonajesComponent implements OnInit {
 
   ngOnInit(): void {
     this.personajesSvr.getPersonajes().subscribe((res) => {
+      console.log(res);
       this.personajes.set(res.results);
     });
   }
